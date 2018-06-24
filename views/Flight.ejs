@@ -1,0 +1,198 @@
+<% include ./partials/header %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<center><div class="ui huge header">Booking Flight Ticket</div><br>
+			<div >
+				
+				<input type="button"  name="ra" value="One Way" id="ow" class="large ui inverted yellow button">   &emsp;&emsp;
+			
+				<input type="button"  name="ra" value="Round Trip" id="rt" class="large ui inverted yellow button">   &emsp;&emsp;
+
+				<input type="button"  name="ra" value="Multi City" id="mc" class="large ui inverted yellow button"> 
+
+			</div>
+	</center><br>
+
+
+	<div class="ui main text container segment" id="one">
+	<br><div class="ui huge header" >Booking Flight Ticket for One way</div><br>
+
+		
+		<form  action="/home" method="post">
+			<label class="h2"><br><br>
+			<div >
+				<label >From </label>&emsp;
+				<input type="text"  placeholder="From" required> &emsp;&emsp;
+				<i class="exchange alternate icon" ></i> &emsp;&emsp;
+				<label >To </label>&emsp;
+				<input type="text"  placeholder="To" required>
+			</div><br><br>
+			<div >
+				<label >Depart On </label>&emsp;
+				<input type="date"  placeholder="pick a date" required>&emsp;&emsp;
+				
+			</div><br><br>
+			<div >
+				<label >Adults</label>&emsp;
+				<input type="number"  placeholder="" required>&emsp;
+			
+				<label >Children</label>&emsp;
+				<input type="number"  placeholder="" required>&emsp;&emsp;
+				<label >Class</label>&emsp;
+				<select class="ui dropdown">
+				  <option value="">Economy</option>
+				  <option value="1">Business</option>
+				  <option value="0">First</option>
+				  <option value="0">Premium Economy</option>
+				</select>
+
+			</div><br><br>
+
+			
+		
+			<center><input type="submit" class="ui inverted big primary button" value="Search" ></center></label>
+		</form>
+	</div>
+
+
+	<div class="ui main text container segment" id="round">
+	<br><div class="ui huge header" >Booking Flight Ticket for Round Trip</div><br>
+
+
+		<form  action="/home" method="post">
+			<label class="h2"><br><br>
+			<div >
+				<label >From </label>&emsp;
+				<input type="text"  placeholder="From" required> &emsp;&emsp;
+				<i class="exchange alternate icon" ></i> &emsp;&emsp;
+				<label >To </label>&emsp;
+				<input type="text"  placeholder="To" required>
+			</div><br><br>
+			<div >
+				<label >Depart On </label>&emsp;
+				<input type="date"  placeholder="pick a date" required>&emsp;&emsp;
+				
+				<label >Return On</label>&emsp;
+				<input type="date"  placeholder="pick a date" required>
+			</div><br><br>
+			<div >
+				<label >Adults</label>&emsp;
+				<input type="number"  placeholder="" required>&emsp;
+			
+				<label >Children</label>&emsp;
+				<input type="number"  placeholder="" required>&emsp;&emsp;
+				<label >Class</label>&emsp;
+				<select class="ui dropdown">
+				  <option value="">Economy</option>
+				  <option value="1">Business</option>
+				  <option value="0">First</option>
+				  <option value="0">Premium Economy</option>
+				</select>
+
+			</div><br><br>
+
+			
+		
+			<center><input type="submit" class="ui inverted big primary button" value="Search" ></center></label>
+		</form>
+	</div>
+
+	<div class="ui main text container segment" id="multi">
+	<br><div class="ui huge header" >Booking Flight Ticket for Multi City</div><br>
+
+
+		<form  action="/home" method="post">
+			<label class="h2"><br><br>
+			<div class="addfield">
+				<div><label >From </label>&emsp;
+				<input type="text"  placeholder="From" required> &emsp;
+				<i class="exchange alternate icon" ></i> &emsp;
+				<label >To </label>&emsp;
+				<input type="text"  placeholder="To" required>
+				<label >Depart On </label>&emsp;
+				<input type="date"  placeholder="pick a date" required>&emsp;&emsp;
+				<br><input type="button" value="Add City" class="addbutton">
+				</div>
+				
+			
+				
+			
+			</div><br><br>
+			<div >
+				<label >Adults</label>&emsp;
+				<input type="number"  placeholder="" required>&emsp;
+			
+				<label >Children</label>&emsp;
+				<input type="number"  placeholder="" required>&emsp;&emsp;
+				<label >Class</label>&emsp;
+				<select class="ui dropdown">
+				  <option value="">Economy</option>
+				  <option value="1">Business</option>
+				  <option value="0">First</option>
+				  <option value="0">Premium Economy</option>
+				</select>
+
+			</div><br><br>
+
+			
+		
+			<center><input type="submit" class="ui inverted big primary button" value="Search" ></center></label>
+		</form>
+	</div>
+
+
+	  	<script >
+	    
+	        $(document).ready(function(){
+	        	$(window).load(function() {
+				  	$("#one").show();
+		            $("#round").hide();
+		            $("#multi").hide();
+		           
+
+		            $("#ow").css("background","olive");
+		            $("#rt").css("background","grey");
+		            $("#mc").css("background","grey");
+				});
+		        $("#ow").click(function(){
+		            $("#one").show();
+		            $("#round").hide();
+		            $("#multi").hide();
+		            $("#ow").css("background","olive");
+		            $("#rt").css("background","grey");
+		            $("#mc").css("background","grey");
+		        });
+		        $("#rt").click(function(){
+		            
+		            $("#one").hide();
+		            $("#round").show();
+		            $("#multi").hide();
+		            $("#ow").css("background","grey");
+		            $("#rt").css("background","olive");
+		            $("#mc").css("background","grey");
+		            
+		        });
+		        $("#mc").click(function(){
+		            
+		            $("#one").hide();
+		            $("#round").hide();
+		            $("#multi").show();
+		            $("#ow").css("background","grey");
+		            $("#rt").css("background","grey");
+		            $("#mc").css("background","olive");
+		            
+		        });
+		            
+				   
+				    $(".addbutton").click(function(){ 
+				   			
+				            $(".addfield").append('<br><div><label>From</label>&emsp;<input type="text"  placeholder="From" required/>&emsp;<i class="exchange alternate icon" ></i><label>To </label>&emsp;<input type="text"  placeholder="To" required><label >Depart On </label>&emsp;<input type="date"  placeholder="pick a date" required>&emsp;<a href="#" class="remove_field"><i class="trash alternate icon"></i></a></div>'); 
+				        
+				    });
+				    $(".addfield").on("click",".remove_field", function(e){ 
+				        $(this).parent('div').remove(); ;
+				    })
+		        
+		    });
+	    
+	</script>
+<% include ./partials/footer %>

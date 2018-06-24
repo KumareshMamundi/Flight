@@ -1,0 +1,60 @@
+var express=require('express');
+app=express();
+
+app.use(express.static("public"));	
+app.set("view engine","ejs");
+app.get("/",function(req,res){
+	console.log("hi");
+	res.send("hi");
+});
+app.get("/home",function(req,res){
+	console.log("home");
+	res.render("Home");
+});
+app.post("/home",function(req,res){
+	console.log("home");
+	res.render("Home");
+});
+app.get("/home/flight",function(req,res){
+	console.log("flight");
+	res.render("flight");
+});
+app.post("/home/flight",function(req,res){
+	console.log("flight");
+	res.render("flight");
+});
+app.get("/home/hotel",function(req,res){
+	console.log("hotel");
+	res.render("hotel");
+});
+app.post("/home/hotel",function(req,res){
+	console.log("hotel");
+	res.render("hotel");
+});
+app.get("/home/cab",function(req,res){
+	console.log("cab");
+	res.render("cab");
+});
+app.post("/home/cab",function(req,res){
+	console.log("cab");
+	res.render("cab");
+});
+app.get("/home/signup",function(req,res){
+	console.log("signup");
+	res.render("signup");
+});
+app.post("/home/signup",function(req,res){
+	console.log("signup");
+	res.render("signup");
+});
+app.get("/home/login",function(req,res){
+	console.log("login");
+	res.render("login");
+});
+app.post("/home/login",function(req,res){
+	console.log("login");
+	res.render("login");
+});
+app.listen(3000,function(req,res){
+	console.log("server started");
+});
